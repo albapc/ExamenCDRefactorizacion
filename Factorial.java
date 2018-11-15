@@ -6,22 +6,28 @@ public class Factorial {
     lo ordene automáticamente*/
     public static void main(String[] args) {
 
-        int j = 8;//le damos un valor inicial a la variable al declarla
-        int f;
-        int i;
+        int justificacion = 8;/*le damos un valor inicial a la variable 
+        al declarla*/
+        int factorial;
+        int nImaginario;
         /*se mueve esta variable al mismo sitio que el resto para 
         tenerlas en orden*/
 
-        if (j == 0) {
-            f = 1;
-        } else {
-            f = 1;
-            for (i = j; i >= 1; i--) {
-                f = f * i;
+        //si se cumple esta condición
+        if (justificacion == 0) {
+            factorial = 1; //el resultado es este
+        } else { //si no se cumple
+            factorial = 1;
+            for (nImaginario = justificacion; nImaginario >= 1; nImaginario--) {
+                factorial = factorial * nImaginario;
+                /*se multiplica el
+                nImaginario (8) por el factorial (1) y el se repite el bucle 8
+                veces, y se va decrementado el nImaginario*/
             }
         }
 
-        System.out.println(f);
+        System.out.println(factorial); /*se muestra en pantalla el resultado
+        de la variable factorial*/
 
     }
 
