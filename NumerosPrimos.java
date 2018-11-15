@@ -17,7 +17,7 @@ public class NumerosPrimos {
     que el programa formatee el código y lo ordene automáticamente*/ 
         int numDigitos; //no es necesario inicializarlos a 0
         int nDigitos; //parte de la segunda palabra en mayúscula
-        int i;
+        int nImaginario; 
         int divisionEntera;
         
         numDigitos = Integer.parseInt(arg[0]);
@@ -26,8 +26,8 @@ public class NumerosPrimos {
             System.out.println("Ingrese como parámetro un número de dígitos "
                     + "correcto (mayor que 0): ");
         }
-        for (i = 1; i <= 99999; i++) {
-            divisionEntera = i;
+        for (nImaginario = 1; nImaginario <= 99999; nImaginario++) {
+            divisionEntera = nImaginario;
 
             int contador = 0;
 
@@ -38,26 +38,26 @@ public class NumerosPrimos {
             nDigitos = contador;
 
             if (nDigitos == numDigitos) {
-                if (i < 4) {
+                if (nImaginario < 4) {
                     primo = true;
                 } else {
-                    if (i % 2 == 0) {
+                    if (nImaginario % 2 == 0) {
                         primo = false;
                     } else {
                         int contador1 = 0;
-                        int i1 = 1;
-                        int limite = (i - 1) / 2;
+                        int nImaginario1 = 1;
+                        int limite = (nImaginario - 1) / 2;
                         if (limite % 2 == 0) {
                             limite--;
                         }
 
-                        while (i1 <= limite) {
-                            if (i % i1 == 0) {
+                        while (nImaginario1 <= limite) {
+                            if (nImaginario % nImaginario1 == 0) {
                                 contador1++;
                             }
-                            i1 += 2;
+                            nImaginario1 += 2;
                             if (contador1 == 2) {
-                                i1 = limite + 1;
+                                nImaginario1 = limite + 1;
                             }
                         }
 
@@ -68,7 +68,7 @@ public class NumerosPrimos {
                 }
 
                 if (primo == true) {
-                    System.out.println(i);
+                    System.out.println(nImaginario);
                 }
             }
         }
