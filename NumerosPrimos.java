@@ -11,20 +11,23 @@ public class NumerosPrimos {
     que buscar numeros primos a partir de 6 digitos, el proceso se hace muy lento.
      */
     
-    public static boolean p = false;
+    public static boolean primo = false;
 
     public static void main(String arg[]){ /*Hacemos clic en Source > Format para 
     que el programa formatee el código y lo ordene automáticamente*/ 
         int numDigitos; //no es necesario inicializarlos a 0
-        int ndigitos;
+        int nDigitos; //parte de la segunda palabra en mayúscula
+        int i;
+        int divisionEntera;
+        
         numDigitos = Integer.parseInt(arg[0]);
         
         if (numDigitos <= 0) {
             System.out.println("Ingrese como parámetro un número de dígitos "
                     + "correcto (mayor que 0): ");
         }
-        for (int i = 1; i <= 99999; i++) {
-            int divisionEntera = i;
+        for (i = 1; i <= 99999; i++) {
+            divisionEntera = i;
 
             int contador = 0;
 
@@ -32,14 +35,14 @@ public class NumerosPrimos {
                 divisionEntera = divisionEntera / 10;
                 contador++;
             }
-            ndigitos = contador;
+            nDigitos = contador;
 
-            if (ndigitos == numDigitos) {
+            if (nDigitos == numDigitos) {
                 if (i < 4) {
-                    p = true;
+                    primo = true;
                 } else {
                     if (i % 2 == 0) {
-                        p = false;
+                        primo = false;
                     } else {
                         int contador1 = 0;
                         int i1 = 1;
@@ -59,12 +62,12 @@ public class NumerosPrimos {
                         }
 
                         if (contador1 == 1) {
-                            p = true;
+                            primo = true;
                         }
                     }
                 }
 
-                if (p == true) {
+                if (primo == true) {
                     System.out.println(i);
                 }
             }
